@@ -1,0 +1,10 @@
+mixin svgElement()
+  - mediaString = '(min-width: 835px)'
+  - loadingAttr = attributes.loading === undefined ? 'lazy' : attributes.loading
+  - altAttr = attributes.alt || ''
+  picture
+    if attributes.media
+      source(srcset=$cachedRoutePath(`/assets/svg/${attributes.name}_pc.svg`), media=`${mediaString}`)
+      img(src=$cachedRoutePath(`/assets/svg/${attributes.name}_sp.svg`), alt = altAttr, loading=loadingAttr)
+    else
+      img(src=$cachedRoutePath(`/assets/svg/${attributes.name}.svg`), alt = altAttr, loading=loadingAttr)

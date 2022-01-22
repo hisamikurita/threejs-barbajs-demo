@@ -1,0 +1,16 @@
+mixin pictureElement()
+  - mediaString = '(min-width: 835px)'
+  - loadingAttr = attributes.loading === undefined ? 'lazy' : attributes.loading
+  - altAttr = attributes.alt || ''
+  picture
+    if attributes.media
+      if process.env.NODE_ENV === 'production'
+        source(type='image/webp', srcset=$cachedRoutePath(`/assets/images/${attributes.name}_pc.webp`), media=`${mediaString}`)
+      source(srcset=$cachedRoutePath(`/assets/images/${attributes.name}_pc.${attributes.ext}`), media=`${mediaString}`)
+      if process.env.NODE_ENV === 'production'
+        source(type='image/webp', srcset=$cachedRoutePath(`/assets/images/${attributes.name}_sp.webp`))
+      img(src=$cachedRoutePath(`/assets/images/${attributes.name}_sp.${attributes.ext}`), alt = altAttr, loading=loadingAttr)
+    else
+      if process.env.NODE_ENV === 'production'
+        source(type='image/webp', srcset=$cachedRoutePath(`/assets/images/${attributes.name}.webp`))
+      img(src=$cachedRoutePath(`/assets/images/${attributes.name}.${attributes.ext}`), alt = altAttr, loading=loadingAttr)

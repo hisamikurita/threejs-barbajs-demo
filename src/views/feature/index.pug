@@ -1,0 +1,12 @@
+extends /_layout
+
+block page
+  - var page = 'feature';
+  - var path = '/feature'
+
+block content
+  div(data-barba="container",data-barba-namespace="feature")
+    section.mv
+      div.mv-inner
+        h1.mv-text
+          | Feature Page

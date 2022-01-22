@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "home": {
+      "title": "home",
+      "description": "Description of home",
+      "keywords": "keyword,keyword,keyword"
+    },
+    "about": {
+      "title": "about",
+      "description": "Description of about",
+      "keywords": "keyword,keyword,keyword"
+    },
+    "service": {
+      "title": "service",
+      "description": "Description of service",
+      "keywords": "keyword,keyword,keyword"
+    },
+    "feature": {
+      "title": "feature",
+      "description": "Description of feature",
+      "keywords": "keyword,keyword,keyword"
+    }
+  }
+}

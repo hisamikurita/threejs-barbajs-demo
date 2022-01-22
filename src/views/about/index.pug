@@ -1,0 +1,12 @@
+extends /_layout
+
+block page
+  - var page = 'about';
+  - var path = '/about'
+
+block content
+  div(data-barba="container",data-barba-namespace="about")
+    section.mv
+      div.mv-inner
+        h1.mv-text
+          | About Page

@@ -1,0 +1,48 @@
+include /partials/_svg_element
+include /partials/_picture_element
+
+block page
+
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='canonical', href=$fullPath(path))
+    title #{meta[page].title}
+    meta(name='description' content=meta[page].description)
+    meta(name='keywords' content=meta[page].keywords)
+    meta(data-key='format-detection', name='format-detection', content='telephone=no')
+    meta(property='og:locale', content='ja_JP')
+    meta(property='og:title', content=meta[page].title)
+    meta(property='og:description', content=meta[page].description)
+    meta(property='og:url', content=$fullPath(path))
+    meta(property='og:type', content='article')
+    meta(property='og:site_name', content='sample_site_name')
+    meta(property='og:image', content=$fullPath('/assets/images/ogp.png'))
+    meta(name='twitter:title', content=meta[page].title)
+    meta(name='twitter:description', content=meta[page].description)
+    meta(name='twitter:card', content='summary_large_image')
+    meta(name='twitter:image', content=$fullPath('/assets/images/ogp.png'))
+    link(rel='icon', type='image/png', href=$fullPath('/assets/images/favicon.png'))
+    link(rel='apple-touch-icon-precomposed', type='image/png', href=$fullPath('/assets/images/apple-touch-icon-precomposed.png'))
+    link(rel="stylesheet", href=$cachedRoutePath('/assets/css/app.css'))
+  body(data-barba="wrapper")
+    div#webgl
+    header.header
+      p.header-logo
+        a(href="/")
+          +svgElement(name='logo', alt='lig')
+      ul.header-list
+        li.header-item
+          a(href="/about").header-link About
+        li.header-item
+          a(href="/service").header-link Service
+        li.header-item
+          a(href="/feature").header-link Feature
+
+    main.main
+      block content
+    footer.footer
+
+    script(src=$cachedRoutePath('/assets/js/app.js'))

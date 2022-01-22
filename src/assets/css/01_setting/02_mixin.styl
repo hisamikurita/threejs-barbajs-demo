@@ -1,0 +1,14 @@
+mq($width = $breakpoint_mobile)
+  @media (max-width: $width)
+    {block}
+
+mq_min($width = $breakpoint_mobile)
+  @media (min-width: $width + 1)
+    {block}
+
+remove_scrollbar()
+  -ms-overflow-style: none
+
+  &::-webkit-scrollbar
+    display: none
+    -webkit-appearance: none
