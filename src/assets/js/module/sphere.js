@@ -76,8 +76,6 @@ export default class Sphere {
     });
     this.mesh = new Mesh(geometry, material);
     this.stage.scene.add(this.mesh);
-
-    console.log(this.mesh);
   }
 
   _setNoise() {

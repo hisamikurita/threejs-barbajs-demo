@@ -3,7 +3,7 @@ precision mediump float;
 uniform float u_color_time;
 uniform vec3 u_color_pallet[4];
 varying vec2 vUv;
-varying float vNoise;
+// varying float vNoise;
 
 /**
  * Referenced | https://iquilezles.org/www/articles/palettes/palettes.htm

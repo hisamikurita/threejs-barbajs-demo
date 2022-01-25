@@ -23,13 +23,13 @@ STAGE.init();
 window.SPHERE = new Sphere(STAGE);
 SPHERE.init();
 
-window.FIRSTLOAD = false;
+// window.FIRSTLOAD = false;
 
 window.addEventListener('load', () => {
   // if (location.href) {
   //   SPHERE.onOpenning();
   // }
-  FIRSTLOAD = true;
+  // FIRSTLOAD = true;
 });
 
 window.addEventListener('mousemove', (e) => {
