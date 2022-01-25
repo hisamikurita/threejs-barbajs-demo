@@ -1,4 +1,6 @@
 html
+  width 100%
+  height 100%
   remove_scrollbar()
 
 body
@@ -8,9 +10,12 @@ body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   -webkit-touch-callout: none
-  font-family: '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', sans-serif
+  width 100%
+  height 100%
+  background: radial-gradient(ellipse at right top,#3a3a3a 20%,#272728 50%,#272728);
   font-size: 14px
   color: $white
+  overflow: hidden
 
 main
   position: relative
@@ -49,4 +54,67 @@ a
   margin 0 auto
 
 .dg.ac
+  display none
   top: 120px!important
+
+.title
+  position absolute
+  bottom 44px
+  left 40px
+  font-family: $carino
+  font-size 72px
+  font-weight: 200
+  line-height 1.24
+  letter-spacing -0.02em
+
+.title-01
+  font-family: $helvetica
+  font-weight: 500
+  font-size 20px
+  letter-spacing -0.012em
+
+.link
+  position absolute
+  bottom 62px
+  right 40px
+  font-size 12px
+  text-align right
+  line-height 1
+
+.link-01
+  color #bbbbbb
+
+.num
+  position: absolute;
+  top: 50%;
+  right: 54px;
+  transform: translate3d(0, -50%, 0);
+  font-family: $helvetica
+
+.num-count
+  display: flex
+  align-items: center
+  justify-content: center
+  position relative
+  width 12px
+  height 16px
+  overflow: hidden
+
+.num-count-index
+  position absolute
+  top 0
+  left 0
+  transform: translateY(14px)
+
+.num-all
+  display: block
+  position relative
+  margin 9px 0 0 0
+  &:before
+    content: ''
+    position absolute
+    top -5px
+    left -6px
+    width 20px
+    height 1px
+    background-color #bbbbbb

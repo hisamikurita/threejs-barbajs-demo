@@ -192,21 +192,27 @@ export default class Sphere {
   }
 
   onOpenning() {
-    GSAP.to(this.mesh.material.uniforms.u_noise_length, {
+    this.opAnimation01 = GSAP.to(this.mesh.material.uniforms.u_noise_length, {
       duration: CONSTANTS.openningDuration,
       ease: CONSTANTS.transform,
       value: 80,
     });
-    GSAP.to(this.mesh.material.uniforms.u_noise_power, {
+    this.opAnimation02 = GSAP.to(this.mesh.material.uniforms.u_noise_power, {
       duration: CONSTANTS.openningDuration,
       ease: CONSTANTS.transform,
       value: 1,
     });
-    GSAP.to(this.mesh.material.uniforms.u_noise_range, {
+    this.opAnimation03 = GSAP.to(this.mesh.material.uniforms.u_noise_range, {
       duration: CONSTANTS.openningDuration,
       ease: CONSTANTS.transform,
       value: 0.15,
     });
+  }
+
+  onOpenningStop() {
+    this.opAnimation01.kill();
+    this.opAnimation02.kill();
+    this.opAnimation03.kill();
   }
 
   onResize() {

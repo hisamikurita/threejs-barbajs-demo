@@ -1,26 +1,48 @@
 .header
   display: flex
-  align-items: center
   justify-content: space-between
   position: fixed
   top 0
   left 0
   width: 100%
-  height 80px
-  padding: 0 50px
-  background-color $black
-  border-bottom: solid 1px $gray
+  padding: 36px 40px 0
   z-index 100
 
 .header-list
   display: flex
+  padding: 22px 0 0 0
 
 .header-item:not(:last-of-type)
-  margin: 0 40px 0 0
+  margin: 0 38px 0 0
 
 .header-link
-  font-size 16px
-  letter-spacing 0.06em
+  font-size 15px
+  font-family $carino
+  font-variation-settings: "wght" 500;
+  transition: font-variation-settings $base-duration, letter-spacing $base-duration;
+  &:hover
+    font-variation-settings: "wght" 700;
+    letter-spacing 0.1em
+
+page = index about service feature
+
+for i in (page)
+  .{i}
+    & .header-item-{i}
+      & .header-link
+        font-variation-settings: "wght" 700;
+        letter-spacing 0.1em
 
 .header-logo
-  width 100px
+  & a
+    display: block
+    margin 0 0 16px 0
+    font-size 60px
+    font-family: $sixcaps;
+    letter-spacing -0.018em
+
+.header-text
+  font-size 15px
+  font-family: $helvetica
+  line-height 1.2
+  letter-spacing -0.018em

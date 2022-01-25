@@ -2,6 +2,9 @@ import barba from '@barba/core';
 import Sphere from './module/sphere';
 import Stage from './module/stage';
 import {
+  ReplaceBody
+} from './module/utils/replace';
+import {
   index
 } from './module/views/index';
 import {
@@ -23,27 +26,24 @@ STAGE.init();
 window.SPHERE = new Sphere(STAGE);
 SPHERE.init();
 
-// window.FIRSTLOAD = false;
+window.OPANIMATIONSWITCH = false;
 
-window.addEventListener('load', () => {
-  // if (location.href) {
-  //   SPHERE.onOpenning();
-  // }
-  // FIRSTLOAD = true;
-});
+if (document.body.classList.contains('index')) {
+  OPANIMATIONSWITCH = true;
+}
 
 window.addEventListener('mousemove', (e) => {
   SPHERE.onMouseMove(e);
 });
 
 window.addEventListener("resize", () => {
-  SPHERE.onResize();
   STAGE.onResize();
+  SPHERE.onResize();
 });
 
 const _raf = () => {
-  SPHERE.onRaf();
   STAGE.onRaf();
+  SPHERE.onRaf();
 };
 
 GSAP.ticker.add(_raf);
@@ -52,4 +52,8 @@ GSAP.ticker.fps(30);
 barba.init({
   views: [index, about, service, feature],
   transitions: [transition],
+});
+
+barba.hooks.beforeEnter((data) => {
+  ReplaceBody(data);
 });

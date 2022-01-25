@@ -1,8 +1,8 @@
 {
   "meta": {
-    "home": {
-      "title": "home",
-      "description": "Description of home",
+    "index": {
+      "title": "index",
+      "description": "Description of index",
       "keywords": "keyword,keyword,keyword"
     },
     "about": {

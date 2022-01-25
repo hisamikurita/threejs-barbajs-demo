@@ -26,23 +26,50 @@ html(lang="ja")
     meta(name='twitter:image', content=$fullPath('/assets/images/ogp.png'))
     link(rel='icon', type='image/png', href=$fullPath('/assets/images/favicon.png'))
     link(rel='apple-touch-icon-precomposed', type='image/png', href=$fullPath('/assets/images/apple-touch-icon-precomposed.png'))
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;500;900&family=Six+Caps&display=swap", rel="stylesheet")
     link(rel="stylesheet", href=$cachedRoutePath('/assets/css/app.css'))
-  body(data-barba="wrapper")
+  body(data-barba="wrapper",class=[page])
     div#webgl
     header.header
-      p.header-logo
-        a(href="./")
-          +svgElement(name='logo', alt='lig')
+      div
+        p.header-logo
+          a(href="/") HISAMI KURITA
+        p.header-text
+          | This is
+          br
+          | Hisami kurita’s
+          br
+          | Demo site
       ul.header-list
-        li.header-item
-          a(href="./about").header-link About
-        li.header-item
-          a(href="./service").header-link Service
-        li.header-item
-          a(href="./feature").header-link Feature
+        li.header-item.header-item-index
+          a(href="/").header-link Home
+        li.header-item.header-item-about
+          a(href="/about").header-link About
+        li.header-item.header-item-service
+          a(href="/service").header-link Service
+        li.header-item.header-item-feature
+          a(href="/feature").header-link Feature
+
+    h1.title
+      span.title-01 Implementing A Creative Website using
+      br
+      span.title-02 Three.js & Barba.js
+
+    p.link
+      span.link-01 article
+      br
+      span.link-02 coming soon
+
+    p.num
+      span.num-count
+        - for (var i = 1; i < 5; i++)
+          span(class=`num-count-0${i}`).num-count-index #{i}
+      span.num-all 4
 
     main.main
       block content
-    footer.footer
 
     script(src=$cachedRoutePath('/assets/js/app.js'))

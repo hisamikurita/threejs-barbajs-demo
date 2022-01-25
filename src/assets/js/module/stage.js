@@ -5,7 +5,7 @@ import {
   Vector3,
   // GridHelper,
   // AxesHelper,
-  Color
+  // Color
 } from 'three';
 // import Stats from 'stats-js';
 import OrbitControls from "three-orbitcontrols";
@@ -13,7 +13,7 @@ import OrbitControls from "three-orbitcontrols";
 export default class Stage {
   constructor() {
     this.renderParam = {
-      clearColor: 0x000000,
+      // clearColor: 0x272728,
       width: window.innerWidth,
       height: window.innerHeight
     };
@@ -52,7 +52,7 @@ export default class Stage {
       alpha: true
     });
     this.renderer.setPixelRatio(window.devicePixelRatio);
-    this.renderer.setClearColor(new Color(this.renderParam.clearColor));
+    // this.renderer.setClearColor(new Color(this.renderParam.clearColor));
     this.renderer.setSize(this.renderParam.width, this.renderParam.height);
     const wrapper = document.querySelector("#webgl");
     wrapper.appendChild(this.renderer.domElement);
