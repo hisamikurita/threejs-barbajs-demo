@@ -26,7 +26,7 @@ const pathRooting = {
     siteUrl: ''
   },
   production: {
-    pathPrefix: '',
+    pathPrefix: '/threejs-barbajs-demo/dist',
     siteUrl: 'https://hisamikurita.github.io/threejs-barbajs-demo/dist/'
   }
 };
