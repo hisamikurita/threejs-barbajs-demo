@@ -22,12 +22,12 @@ const pathRooting = {
     siteUrl: 'http://localhost:8080'
   },
   staging: {
-    pathPrefix: '/special',
-    siteUrl: 'https://hoge.staging.com'
+    pathPrefix: '',
+    siteUrl: ''
   },
   production: {
-    pathPrefix: '/special',
-    siteUrl: 'https://hoge.com'
+    pathPrefix: '',
+    siteUrl: 'https://hisamikurita.github.io/threejs-barbajs-demo/dist/'
   }
 };
 
