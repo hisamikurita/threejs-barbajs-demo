@@ -5,7 +5,7 @@
     "prepare_dist": "node scripts/prettify-html.js",
     "dev": "NODE_ENV=development TARGET_SERVER=local gulp",
     "staging": "NODE_ENV=production TARGET_SERVER=staging gulp production && yarn prepare_dist",
-    "production": "NODE_ENV=production TARGET_SERVER=production gulp production && yarn prepare_dist"
+    "generate": "NODE_ENV=production TARGET_SERVER=production gulp production && yarn prepare_dist"
   },
   "dependencies": {
     "@barba/core": "^2.9.7",

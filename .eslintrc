@@ -1,0 +1,26 @@
+{
+  "root": true,
+  "extends": "eslint:recommended",
+  "rules": {
+    // "no-console": "warn",
+    "no-unused-vars": "warn",
+    "semi": ["warn", "always"],
+    "semi-spacing": ["error", {"after": true, "before": false}],
+    "semi-style": ["error", "last"],
+    "no-extra-semi": "warn",
+    "no-unexpected-multiline": "error",
+    "no-unreachable": "error",
+    "no-undef": 0
+  },
+  "env": {
+      "es6": true,
+      "browser": true
+  },
+  "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2020
+  },
+  "globals": {
+    "process": true
+  }
+}

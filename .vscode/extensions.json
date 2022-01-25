@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "thisismanta.stylus-supremacy",
+    "ducfilan.pug-formatter"
+  ]
+}
