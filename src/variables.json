@@ -1,24 +1,24 @@
 {
   "meta": {
     "index": {
-      "title": "index",
-      "description": "Description of index",
-      "keywords": "keyword,keyword,keyword"
+      "title": "This is Hisami kurita’s Demo site",
+      "description": "Implementing A Creative Website using Three.js & Barba.js",
+      "keywords": ""
     },
     "about": {
-      "title": "about",
-      "description": "Description of about",
-      "keywords": "keyword,keyword,keyword"
+      "title": "This is Hisami kurita’s Demo site",
+      "description": "Implementing A Creative Website using Three.js & Barba.js",
+      "keywords": ""
     },
     "service": {
-      "title": "service",
-      "description": "Description of service",
-      "keywords": "keyword,keyword,keyword"
+      "title": "This is Hisami kurita’s Demo site",
+      "description": "Implementing A Creative Website using Three.js & Barba.js AAA",
+      "keywords": ""
     },
     "feature": {
-      "title": "feature",
-      "description": "Description of feature",
-      "keywords": "keyword,keyword,keyword"
+      "title": "This is Hisami kurita’s Demo site",
+      "description": "Implementing A Creative Website using Three.js & Barba.js",
+      "keywords": ""
     }
   }
 }

@@ -2,11 +2,24 @@ import {
   SphereBufferGeometry,
   RawShaderMaterial,
   Mesh,
-  Color
+  Color,
+  Points
+  // Vector2
 } from 'three';
+// import {
+//   EffectComposer
+// } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+// import {
+//   RenderPass
+// } from 'three/examples/jsm/postprocessing/RenderPass.js';
+// import {
+//   UnrealBloomPass
+// } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 import * as dat from 'dat.gui';
 import vertexShader from './shaders/vertexshader.vert';
 import fragmentShader from './shaders/fragmentshader.frag';
+import pVertexShader from './shaders/pvertexshader.vert';
+import pFragmentShader from './shaders/pfragmentshader.frag';
 
 export default class Sphere {
   constructor(stage) {
@@ -33,6 +46,11 @@ export default class Sphere {
       noise: 0.02,
     };
     this.mesh = null;
+
+    // this.composer = new EffectComposer(this.stage.renderer);
+    // this.composer.addPass(new RenderPass(this.stage.scene, this.stage.camera));
+    // this.UnrealBloomPass = new UnrealBloomPass(new Vector2(this.stage.width, this.stage.height), 0.4, 1.4, 0.0);
+    // this.composer.addPass(this.UnrealBloomPass);
   }
 
   init() {
@@ -75,7 +93,49 @@ export default class Sphere {
       wireframe: false,
     });
     this.mesh = new Mesh(geometry, material);
+
+    const scaleDeveiceRatio = window.innerWidth > 767 ? 1 : 0.62;
+    this.mesh.scale.set(scaleDeveiceRatio, scaleDeveiceRatio, scaleDeveiceRatio);
+
+    //particle
+    const particleGeo = new SphereBufferGeometry(0.22, 52, 52);
+    const particleMat = new RawShaderMaterial({
+      vertexShader: pVertexShader,
+      fragmentShader: pFragmentShader,
+      uniforms: {
+        u_particle_noise_length: {
+          type: "f",
+          value: 20
+        },
+        //   u_noise_power: {
+        //     type: "f",
+        //     value: 0
+        //   },
+        //   u_noise_range: {
+        //     type: "f",
+        //     value: 0
+        //   },
+        //   u_color_pallet: {
+        //     type: "v3v",
+        //     value: this.u_colorPallet
+        //   },
+        //   u_noise_time: {
+        //     type: "f",
+        //     value: this.speed.noise
+        //   },
+        u_particle_time: {
+          type: "f",
+          value: this.speed.color
+        },
+      },
+      transparent: true,
+      wireframe: false,
+    });
+    this.particle = new Points(particleGeo, particleMat);
+    // this.stage.scene.add(this.particle);
     this.stage.scene.add(this.mesh);
+
+    console.log(this.particle);
   }
 
   _setNoise() {
@@ -98,6 +158,30 @@ export default class Sphere {
       duration: CONSTANTS.fullDuration,
       ease: CONSTANTS.transform,
       y: 0,
+    });
+  }
+
+  _setScale() {
+    GSAP.to(this.mesh.material.uniforms.u_noise_length, {
+      duration: CONSTANTS.fullDuration,
+      ease: CONSTANTS.transform,
+      repeat: 1,
+      yoyo: true,
+      value: 90,
+    });
+    // GSAP.to(this.mesh.material.uniforms.u_noise_range, {
+    //   duration: CONSTANTS.fullDuration,
+    //   ease: CONSTANTS.transform,
+    //   repeat: 1,
+    //   yoyo: true,
+    //   value: 0.3,
+    // });
+    GSAP.to(this.mesh.material.uniforms.u_noise_range, {
+      duration: CONSTANTS.fullDuration,
+      ease: CONSTANTS.transform,
+      repeat: 1,
+      yoyo: true,
+      value: 0.3,
     });
   }
 
@@ -125,6 +209,8 @@ export default class Sphere {
   }
 
   _setWireframe() {
+    const positionDeveiceRatio = window.innerWidth > 767 ? -0.22 : -0.14;
+
     GSAP.to(this.mesh.material.uniforms.u_noise_length, {
       duration: CONSTANTS.fullDuration,
       ease: CONSTANTS.transform,
@@ -143,7 +229,7 @@ export default class Sphere {
     GSAP.to(this.mesh.position, {
       duration: CONSTANTS.fullDuration,
       ease: CONSTANTS.transform,
-      y: -0.22,
+      y: positionDeveiceRatio,
     });
 
     this.mesh.material.wireframe = true;
@@ -185,10 +271,13 @@ export default class Sphere {
 
   _render() {
     this.mesh.material.uniforms.u_noise_time.value += this.speed.noise;
+    this.particle.material.uniforms.u_particle_time.value += 0.020;
     this.mesh.material.uniforms.u_color_time.value += this.speed.color;
 
     this.mesh.rotation.x += (this.mouse.y - this.mesh.rotation.x) / this.mouse.friction;
     this.mesh.rotation.y += ((this.mouse.x - this.mesh.rotation.y) / this.mouse.friction);
+
+    // this.composer.render();
   }
 
   onOpenning() {

@@ -2,7 +2,8 @@ import barba from '@barba/core';
 import Sphere from './module/sphere';
 import Stage from './module/stage';
 import {
-  ReplaceBody
+  ReplaceBody,
+  ReplaceHead
 } from './module/utils/replace';
 import {
   index
@@ -61,4 +62,5 @@ barba.init({
 
 barba.hooks.beforeEnter((data) => {
   ReplaceBody(data);
+  ReplaceHead(data);
 });

@@ -7,13 +7,21 @@
   width: 100%
   padding: 36px 40px 0
   z-index 100
+  +mq()
+    padding 18px 20px
 
 .header-list
   display: flex
   padding: 22px 0 0 0
+  +mq()
+    display: block
+    padding 8px 0 0 0
 
 .header-item:not(:last-of-type)
   margin: 0 38px 0 0
+  +mq()
+    margin 0
+    text-align right
 
 .header-link
   font-size 15px
@@ -38,6 +46,9 @@ for i in (page)
     font-size 60px
     font-family: $sixcaps;
     letter-spacing -0.018em
+    +mq()
+      margin 0 0 8px 0
+
 
 .header-text
   font-size 12px

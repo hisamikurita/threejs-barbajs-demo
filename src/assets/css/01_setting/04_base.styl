@@ -56,7 +56,7 @@ a
   margin 0 auto
 
 .dg.ac
-  display none
+  // display none
   top: 120px!important
 
 .title
@@ -68,25 +68,20 @@ a
   font-weight: 200
   line-height 1.24
   letter-spacing -0.02em
-  // animation: weight 6.0s $colorAndOpacity-easing infinite;
+  +mq()
+    bottom 20px
+    left 20px
+    font-size 24px
+    white-space: nowrap
 
-// @keyframes weight {
-//   0%{
-//     font-variation-settings: "wght" 200;
-//     }
-//   50%{
-//     font-variation-settings: "wght" 500;
-//   }
-//   100%{
-//     font-variation-settings: "wght" 200;
-//   }
-// }
 
 .title-01
   font-family: $helvetica
   font-weight: 500
   font-size 15px
   letter-spacing -0.012em
+  +mq()
+    font-size 10px
 
 .link
   position absolute
@@ -95,6 +90,10 @@ a
   font-size 12px
   text-align right
   line-height 1
+  +mq()
+    bottom 26px
+    right 20px
+    font-size 10px
 
 .link-01
   color #bbbbbb
@@ -102,7 +101,7 @@ a
 .num
   position: absolute;
   top: 50%;
-  right: 54px;
+  right: 16px;
   transform: translate3d(0, -50%, 0);
   font-family: $helvetica
 
