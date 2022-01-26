@@ -26,7 +26,7 @@ const pathRooting = {
     siteUrl: ''
   },
   production: {
-    pathPrefix: '',
+    pathPrefix: '/threejs-barbajs-demo/dist',
     siteUrl: 'https://hisamikurita.github.io/threejs-barbajs-demo/dist'
   }
 };
@@ -75,7 +75,7 @@ function taskHTML() {
           $routePath: (path = '') => _pathRooting.pathPrefix + path,
 
           // フルパスを返す
-          $fullPath: (path = '') => _pathRooting.siteUrl + _pathRooting.pathPrefix + path
+          $fullPath: (path = '') => _pathRooting.siteUrl + path
         }
       })
     )
