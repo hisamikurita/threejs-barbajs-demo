@@ -19,6 +19,9 @@ import {
 import {
   transition
 } from './module/transition';
+import {
+  fontVariationSettings
+} from './module/font';
 
 window.STAGE = new Stage();
 STAGE.init();
@@ -31,6 +34,8 @@ window.OPANIMATIONSWITCH = false;
 if (document.body.classList.contains('index')) {
   OPANIMATIONSWITCH = true;
 }
+
+fontVariationSettings();
 
 window.addEventListener('mousemove', (e) => {
   SPHERE.onMouseMove(e);
