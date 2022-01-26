@@ -13,6 +13,7 @@ varying vec2 vUv;
 varying float vNoise;
 
 #pragma glslify: cnoise3 = require(glsl-noise/classic/3d);
+#pragma glslify: snoise3 = require(glsl-noise/simplex/3d);
 
 void main() {
     vUv = uv;
@@ -21,7 +22,9 @@ void main() {
     float noisePower = u_noise_power;
     float noiseRange = u_noise_range;
     float noise = cnoise3(noiseLength * vec3(position.x, position.y, position.z + u_noise_time * 0.010));
-    vNoise = noise;
+    float vnoise = 0.50 + cnoise3(noiseLength * vec3(position.x, position.y, position.z + u_noise_time * 0.010));
+    // float snoise = snoise3(noiseLength * vec3(position.x, position.y, position.z + u_noise_time * 0.010));
+    vNoise = vnoise;
     newPosition += noiseRange * ((noise * noisePower) * normal);
     gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
 }

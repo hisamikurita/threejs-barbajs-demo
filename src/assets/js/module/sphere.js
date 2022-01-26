@@ -88,6 +88,22 @@ export default class Sphere {
           type: "f",
           value: this.speed.color
         },
+        u_color_switch_01: {
+          type: "f",
+          value: 1
+        },
+        u_color_switch_02: {
+          type: "f",
+          value: 1
+        },
+        u_color_switch_03: {
+          type: "f",
+          value: 0
+        },
+        u_color_switch_04: {
+          type: "f",
+          value: 1
+        },
       },
       transparent: true,
       wireframe: false,
@@ -302,6 +318,29 @@ export default class Sphere {
     this.opAnimation01.kill();
     this.opAnimation02.kill();
     this.opAnimation03.kill();
+  }
+
+  onClick() {
+    GSAP.to(this.mesh.material.uniforms.u_color_switch_01, {
+      duration: CONSTANTS.fullDuration,
+      ease: CONSTANTS.colorAndOpacity,
+      value: Math.random() * 2.0,
+    });
+    GSAP.to(this.mesh.material.uniforms.u_color_switch_02, {
+      duration: CONSTANTS.fullDuration,
+      ease: CONSTANTS.colorAndOpacity,
+      value: Math.random() * 2.0,
+    });
+    GSAP.to(this.mesh.material.uniforms.u_color_switch_03, {
+      duration: CONSTANTS.fullDuration,
+      ease: CONSTANTS.colorAndOpacity,
+      value: Math.random() * 2.0,
+    });
+    GSAP.to(this.mesh.material.uniforms.u_color_switch_04, {
+      duration: CONSTANTS.fullDuration,
+      ease: CONSTANTS.colorAndOpacity,
+      value: Math.random() * 2.0,
+    });
   }
 
   onResize() {

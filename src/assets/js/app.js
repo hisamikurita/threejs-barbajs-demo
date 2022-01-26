@@ -42,6 +42,10 @@ window.addEventListener('mousemove', (e) => {
   SPHERE.onMouseMove(e);
 });
 
+window.addEventListener('click', () => {
+  SPHERE.onClick();
+});
+
 window.addEventListener("resize", () => {
   STAGE.onResize();
   SPHERE.onResize();
