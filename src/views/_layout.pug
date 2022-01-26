@@ -36,7 +36,7 @@ html(lang="ja")
     header.header
       div
         p.header-logo
-          a(href="/") HISAMI KURITA
+          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist'}`) HISAMI KURITA
         p.header-text
           | This is
           br
@@ -45,13 +45,13 @@ html(lang="ja")
           | Demo site
       ul.header-list
         li.header-item.header-item-index
-          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist/'}`).header-link Home
+          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist'}`).header-link Home
         li.header-item.header-item-about
-          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist/'}/about`).header-link About
+          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist'}/about`).header-link About
         li.header-item.header-item-service
-          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist/'}/service`).header-link Service
+          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist'}/service`).header-link Service
         li.header-item.header-item-feature
-          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist/'}/feature`).header-link Feature
+          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist'}/feature`).header-link Feature
 
     h1.title
       span.title-01 Implementing A Creative Website using
