@@ -18,11 +18,10 @@
 .header-link
   font-size 15px
   font-family $carino
-  font-variation-settings: "wght" 500;
-  transition: font-variation-settings $base-duration, letter-spacing $base-duration;
+  opacity 0.6
+  transition: opacity $base-duration $colorAndOpacity-easing;
   &:hover
-    font-variation-settings: "wght" 700;
-    letter-spacing 0.1em
+    opacity: 1
 
 page = index about service feature
 
@@ -30,8 +29,7 @@ for i in (page)
   .{i}
     & .header-item-{i}
       & .header-link
-        font-variation-settings: "wght" 700;
-        letter-spacing 0.1em
+            opacity: 1
 
 .header-logo
   & a
@@ -42,7 +40,7 @@ for i in (page)
     letter-spacing -0.018em
 
 .header-text
-  font-size 15px
+  font-size 12px
   font-family: $helvetica
   line-height 1.2
   letter-spacing -0.018em

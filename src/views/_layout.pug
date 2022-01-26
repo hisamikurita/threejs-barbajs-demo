@@ -45,13 +45,13 @@ html(lang="ja")
           | Demo site
       ul.header-list
         li.header-item.header-item-index
-          a(href="/").header-link Home
+          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist/'}`).header-link Home
         li.header-item.header-item-about
-          a(href="/about").header-link About
+          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist/'}/about`).header-link About
         li.header-item.header-item-service
-          a(href="/service").header-link Service
+          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist/'}/service`).header-link Service
         li.header-item.header-item-feature
-          a(href="/feature").header-link Feature
+          a(href=`${process.env.TARGET_SERVER === 'local' ? 'http://localhost:8080': 'https://hisamikurita.github.io/threejs-barbajs-demo/dist/'}/feature`).header-link Feature
 
     h1.title
       span.title-01 Implementing A Creative Website using
