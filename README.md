@@ -1,4 +1,4 @@
-# pokemon-evolution
+# threejs-barbajs-demo
 
 ● <a href="https://hisamikurita.github.io/threejs-barbajs-demo/dist/">DEMO</a>
 
