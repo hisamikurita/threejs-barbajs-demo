@@ -1,34 +1,23 @@
-## 開発
+# pokemon-evolution
 
-- node 14.18.1, npm 6.14.15, yarn 1.22.17
-- node_modules のインストールには yarn を使用してください
+● <a href="https://hisamikurita.github.io/threejs-barbajs-demo/dist/">DEMO</a>
 
-### Install
+![スクリーンショット (351)](https://user-images.githubusercontent.com/47776346/97080261-018c9400-1635-11eb-9067-be30f821b590.png)
+![スクリーンショット (352)](https://user-images.githubusercontent.com/47776346/97080263-02bdc100-1635-11eb-8693-ed7043a5433c.png)
+![スクリーンショット (353)](https://user-images.githubusercontent.com/47776346/97080265-04878480-1635-11eb-83f3-877357ff442c.png)
+![スクリーンショット (354)](https://user-images.githubusercontent.com/47776346/97080266-06e9de80-1635-11eb-8447-a358d24ec15b.png)
 
+## Usage
+* Clone repository<br>
+* Install Node.js<br>
+* Create an `.env` file and copy the contents of `.env-sample`. <br>
+* Run following commands<br>
 ```
-yarn install
-```
-
-### 開発プレビュー
-
-開発用のサーバーは http://localhost:8080/ になります
-
-```
-yarn develop
-```
-
-### 納品
-
-```
-yarn production
+  yarn install
+  yarn dev
 ```
 
-### その他
-
-- エディターは visual studio code を使用してください。
-- prettier を使用し、セーブ時にコードを整形をしています。
-- src/variables.json で定数の設定ができます。サンプルでは meta を記述してます。
-- scripts/prettify-html.js では html 整形をしていますが、圧縮したい場合は外してください。
-- src/views/partials/\_picture-element.pug は webp 画像モジュールです。
-- src/views/partials/\_svg-element.pug は SVG スプライトモジュールです。
-- gulpfile.js の stylus タスクでリセット css を挿入してます。
+* Before deploying, run command for production.<br>
+```
+  yarn generate
+```
