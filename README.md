@@ -21,3 +21,6 @@
 ```
   yarn generate
 ```
+
+# Design Reference
+<a href="https://www.updata.one/">https://www.updata.one/</a>
