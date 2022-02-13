@@ -10,7 +10,6 @@
 ## Usage
 * Clone repository<br>
 * Install Node.js<br>
-* Create an `.env` file and copy the contents of `.env-sample`. <br>
 * Run following commands<br>
 ```
   yarn install
